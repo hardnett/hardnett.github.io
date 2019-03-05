@@ -1,46 +1,21 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <link rel="stylesheet" href="css/mainScreen.css">
+  <script src="js/main.js"></script>
+</head>
 <body>
 
 <h2>Create Object from JSON String</h2>
 
 <p id="demo"></p>
 
-<input type="text" id="myInput" placeholder="...">
+<input type="text" id="searchInput" placeholder="...">
  <button type="submit" onPress="myFunction()">Search</button>
 
-<ul id="myUL">
-  <li><a href="#">Adele</a></li>
-  <li><a href="#">Agnes</a></li>
+<p id="results">
 
-  <li><a href="#">Billy</a></li>
-  <li><a href="#">Bob</a></li>
-
-  <li><a href="#">Calvin</a></li>
-  <li><a href="#">Christina</a></li>
-  <li><a href="#">Cindy</a></li>
-</ul>
-
-
-<script>
-
-function myFunction() {
-  var input;
-
-  input = document.getElementById('myInput')
-
-  const Http = new XMLHttpRequest();
-  const url='https://images-api.nasa.gov/search?q=apollo%2011 &media_type=image';
-  Http.open("GET", url);
-  Http.send();
-
-  Http.onreadystatechange=(e)=>{
-  console.log(Http.responseText)
-  obj = JSON.parse(Http.responseText);
-  document.getElementById("demo").innerHTML = obj.collection.metadata.total_hits + " " + obj.collection.items[3].data[0].description
-
-}
-</script>
+</p>
 
 </body>
 </html>
