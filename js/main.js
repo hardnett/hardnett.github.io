@@ -11,6 +11,10 @@ function myFunction() {
   Http.onreadystatechange=(e)=>{
     console.log(Http.responseText)
     obj = JSON.parse(Http.responseText);
-    document.getElementById("results").innerHTML = obj.collection.metadata.total_hits + " " + obj.collection.items[3].data[0].description
+
+    document.getElementsByClassName("results").innerHTML = "The total number of hits: " + obj.collection.metadata.total_hits
+    for (var i = 0; i < obj.collection.items.length; i++) {
+      document.getElementById("results").innerHTML += " " "item # " + i + ": " + obj.collection.items[i].data[0].description;
+    }
   }
 }
