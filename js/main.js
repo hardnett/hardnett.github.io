@@ -12,9 +12,9 @@ function myFunction() {
     console.log(Http.responseText)
     obj = JSON.parse(Http.responseText);
 
-    document.getElementsByClassName("results").innerHTML = "The total number of hits: " + obj.collection.metadata.total_hits;
+    document.getElementsByClassName("results").innerHTML = "The total number of hits: " + obj.collection.metadata.total_hits + "\n\n\n";
     for (var i = 0; i < obj.collection.items.length; i++) {
-      document.getElementById("results").innerHTML += "item # " + i + ": " + obj.collection.items[i].data[0].description;
+      document.getElementById("results").innerHTML += "item # " + i + ": " + obj.collection.items[i].data[0].description + "\n\n";
     }
   }
 }
